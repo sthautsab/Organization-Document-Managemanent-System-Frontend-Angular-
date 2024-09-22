@@ -1,0 +1,199 @@
+<div class="popup">
+  <h1 mat-dialog-title>Status Of Document</h1>
+  <div mat-dialog-content>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      {{
+        dataSource | json
+      }}
+      <!-- Position Column -->
+      <ng-container matColumnDef="DocumentId">
+        <th mat-header-cell *matHeaderCellDef>DocumentId.</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.DocumentId }}
+        </td>
+      </ng-container>
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="DepartmentID1">
+        <th mat-header-cell *matHeaderCellDef>DepartmentID1.</th>
+        <td mat-cell *matCellDef="let element">
+          <div class="cell">
+            <div>
+              {{ element.DepartmentID1 }}
+            </div>
+            <div class="buttons">
+              <span>
+                <button
+                  (click)="
+                    updateDocumentStatus('DepartmentID1', element, 'Approve')
+                  "
+                  mat-raised-button
+                  mat-dialog-close
+                  *ngIf="
+                    element.DepartmentID1 === 'Rejected' ||
+                    element.DepartmentID1 === 'Pending'
+                  "
+                >
+                  Approve
+                </button>
+              </span>
+              <span>
+                <button
+                  (click)="
+                    updateDocumentStatus('DepartmentID1', element, 'Reject')
+                  "
+                  mat-raised-button
+                  mat-dialog-close
+                  *ngIf="
+                    element.DepartmentID1 === 'Approved' ||
+                    element.DepartmentID1 === 'Pending'
+                  "
+                >
+                  Reject
+                </button>
+              </span>
+            </div>
+          </div>
+        </td>
+      </ng-container>
+      <!-- Position Column -->
+      <ng-container matColumnDef="DepartmentID2">
+        <th mat-header-cell *matHeaderCellDef>DepartmentID2.</th>
+        <td mat-cell *matCellDef="let element">
+          <div class="cell">
+            <div>
+              {{ element.DepartmentID2 }}
+            </div>
+            <div class="buttons">
+              <span>
+                <button
+                  (click)="
+                    updateDocumentStatus('DepartmentID2', element, 'Approve')
+                  "
+                  mat-raised-button
+                  mat-dialog-close
+                  *ngIf="
+                    element.DepartmentID2 === 'Rejected' ||
+                    element.DepartmentID2 === 'Pending'
+                  "
+                >
+                  Approve
+                </button>
+              </span>
+              <span>
+                <button
+                  (click)="
+                    updateDocumentStatus('DepartmentID2', element, 'Reject')
+                  "
+                  mat-raised-button
+                  mat-dialog-close
+                  *ngIf="
+                    element.DepartmentID2 === 'Approved' ||
+                    element.DepartmentID2 === 'Pending'
+                  "
+                >
+                  Reject
+                </button>
+              </span>
+            </div>
+          </div>
+        </td>
+      </ng-container>
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="DepartmentID3">
+        <th mat-header-cell *matHeaderCellDef>DepartmentID3.</th>
+        <td mat-cell *matCellDef="let element">
+          <div class="cell">
+            <div>
+              {{ element.DepartmentID3 }}
+            </div>
+            <div class="buttons">
+              <span>
+                <button
+                  (click)="
+                    updateDocumentStatus('DepartmentID3', element, 'Approve')
+                  "
+                  mat-raised-button
+                  mat-dialog-close
+                  *ngIf="
+                    element.DepartmentID3 === 'Rejected' ||
+                    element.DepartmentID3 === 'Pending'
+                  "
+                >
+                  Approve
+                </button>
+              </span>
+              <span>
+                <button
+                  (click)="
+                    updateDocumentStatus('DepartmentID3', element, 'Reject')
+                  "
+                  mat-raised-button
+                  mat-dialog-close
+                  *ngIf="
+                    element.DepartmentID3 === 'Approved' ||
+                    element.DepartmentID3 === 'Pending'
+                  "
+                >
+                  Reject
+                </button>
+              </span>
+            </div>
+          </div>
+        </td>
+      </ng-container>
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="DepartmentID4">
+        <th mat-header-cell *matHeaderCellDef>DepartmentID4.</th>
+        <td mat-cell *matCellDef="let element">
+          <div class="cell">
+            <div>
+              {{ element.DepartmentID4 }}
+            </div>
+            <div class="buttons">
+              <span>
+                <button
+                  (click)="
+                    updateDocumentStatus('DepartmentID4', element, 'Approve')
+                  "
+                  mat-raised-button
+                  mat-dialog-close
+                  *ngIf="
+                    element.DepartmentID4 === 'Rejected' ||
+                    element.DepartmentID4 === 'Pending'
+                  "
+                >
+                  Approve
+                </button>
+              </span>
+              <span>
+                <button
+                  (click)="
+                    updateDocumentStatus('DepartmentID4', element, 'Reject')
+                  "
+                  mat-raised-button
+                  mat-dialog-close
+                  *ngIf="
+                    element.DepartmentID4 === 'Approved' ||
+                    element.DepartmentID4 === 'Pending'
+                  "
+                >
+                  Reject
+                </button>
+              </span>
+            </div>
+          </div>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+  <!-- {{data.document | json}} -->
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>No Thanks</button>
+    <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
+  </div>
+</div>

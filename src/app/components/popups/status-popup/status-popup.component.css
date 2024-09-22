@@ -1,0 +1,25 @@
+.cell{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+    
+}
+th{
+    text-align: center;
+}
+.buttons{
+    margin-top:10px;
+}
+
+.mat-mdc-table .mat-mdc-row:hover, .mat-mdc-table .mat-mdc-footer-row:hover {
+    background-color: none !important;
+}
+.mdc-data-table__row:not(.mdc-data-table__row--selected):hover {
+    background-color: none !important;
+}
+
+.mdc-data-table__row:not(.mdc-data-table__row--selected):hover{
+    background-color: none !important;
+}

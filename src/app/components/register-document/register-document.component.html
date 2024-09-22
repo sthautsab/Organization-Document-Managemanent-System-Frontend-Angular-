@@ -1,0 +1,296 @@
+{{registerDocument.value | json}}
+<form class="border border-dark p-3 formArea" [formGroup]="registerDocument" (ngSubmit)="submit()">
+  <div class="row g-0">
+    <div class="col-12 text-center mb-3 p-2 bg-light">
+      <span fs-3>Register</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="DId" class="form-label">DId<span class = "star">*</span></label>
+      <input
+        type="number"
+        class="form-control"
+        id="DId"
+        name="DId"
+        placeholder="DId"
+        formControlName="DId"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="documentTitle" class="form-label">DocumentTitle<span class = "star">*</span></label>
+      <input
+        type="text"
+        class="form-control"
+        id="documentTitle"
+        name="documentTitle"
+        placeholder="DocumentTitle"
+        formControlName="DocumentTitle"
+      />
+      <div class="form-text text-danger" *ngIf ="DocumentTitle.errors?.['required'] && (DocumentTitle.touched || DocumentTitle.dirty)">
+        This Field is Required.
+      </div>
+    </div>
+    <div class="col">
+      <label for="Organization" class="form-label">Organization<span class = "star">*</span></label>
+      <input
+        type="text"
+        class="form-control"
+        id="Organization"
+        name="Organization"
+        placeholder="Organization"
+        formControlName="Organization"
+      />
+      <div class="form-text text-danger" *ngIf ="Organization.errors?.['required'] && (Organization.touched || Organization.dirty)">
+        This Field is Required.
+      </div>
+    </div>
+  </div>
+  <!-- dartaNo -->
+  <div class="row">
+    <div class="col-md-6">
+      <label for="DartaNo" class="form-label">DartaNo</label>
+      <input
+        type="number"
+        class="form-control"
+        id="DartaNo"
+        name="DartaNo"
+        placeholder="DartaNo"
+        formControlName="DartaNo"
+      />
+    </div>
+  </div>
+  <!-- address -->
+  <div class="row">
+    <div class="col">
+      <label for="StateId" class="form-label">StateId</label>
+      <input
+        type="number"
+        class="form-control"
+        id="StateId"
+        name="StateId"
+        placeholder="StateId"
+        formControlName="StateId"
+      />
+    </div>
+    <div class="col">
+      <label for="DistrictId" class="form-label">DistrictId</label>
+      <input
+        type="text"
+        class="form-control"
+        id="DistrictId"
+        name="DistrictId"
+        placeholder="DistrictId"
+        formControlName="DistrictId"
+      />
+    </div>
+    <div class="col">
+      <label for="VDCMUNId" class="form-label">VDCMUNId</label>
+      <input
+        type="text"
+        class="form-control"
+        id="VDCMUNId"
+        name="VDCMUNId"
+        placeholder="VDCMUNId"
+        formControlName="VDCMUNId"
+      />
+    </div>
+  </div>
+  <!-- address-2 -->
+  <div class="row">
+    <div class="col">
+      <label for="WardNo" class="form-label">WardNo</label>
+      <input
+        type="text"
+        class="form-control"
+        id="WardNo"
+        name="WardNo"
+        placeholder="WardNo"
+        formControlName="WardNo"
+      />
+    </div>
+    <div class="col">
+      <label for="Tole" class="form-label">Tole</label>
+      <input
+        type="text"
+        class="form-control"
+        id="Tole"
+        name="Tole"
+        placeholder="Tole"
+        formControlName="Tole"
+      />
+    </div>
+  </div>
+  <!-- Email -->
+  <div class="row">
+    <div class="col-6">
+      <label for="Email" class="form-label">Email<span class = "star">*</span></label>
+      <input
+        type="email"
+        class="form-control"
+        id="Email"
+        name="Email"
+        placeholder="Email"
+        formControlName="Email"
+      />
+      <div class="form-text text-danger" *ngIf ="Email.errors?.['required'] && (Email.touched || Email.dirty)">
+        This Field is Required.
+      </div>
+      <div class="form-text text-danger" *ngIf ="Email.errors?.['email'] && (Email.touched || Email.dirty)">
+        Please enter valid email.
+      </div>
+    </div>
+  </div>
+  <!-- contact -->
+  <div class="row">
+    <div class="col">
+      <label for="Phone" class="form-label">Phone<span class = "star">*</span></label>
+      <input
+        type="Phone"
+        class="form-control"
+        id="Phone"
+        name="Phone"
+        placeholder="Phone"
+        formControlName="Phone"
+      />
+      <div class="form-text text-danger" *ngIf ="(Phone.errors?.['minlength'] || Phone.errors?.['maxlength']) && (Phone.touched || Phone.dirty)">
+        Enter 10-digit number
+      </div>
+    </div>
+    <div class="col">
+      <label for="MobileNo" class="form-label">MobileNo<span class = "star">*</span></label>
+      <input
+        type="text"
+        class="form-control"
+        id="MobileNo"
+        name="MobileNo"
+        placeholder="MobileNo"
+        formControlName="MobileNo"
+      />
+      <div class="form-text text-danger" *ngIf ="(MobileNo.errors?.['minlength'] || MobileNo.errors?.['maxlength']) && (MobileNo.touched || MobileNo.dirty)">
+        Enter 10-digit number
+      </div>
+    </div>
+  </div>
+
+  <!-- entrydate -->
+  <div class="row">
+    <div class="col-6">
+      <!-- <label for="Email" class="form-label">EntryDate</label>
+        <input
+          type="email"
+          class="form-control"
+          id="EntryDate"
+          name="EntryDate"
+          placeholder="EntryDate"
+        /> -->
+      <!-- <div class="input-group">
+          <input
+            class="form-control"
+            placeholder="yyyy-mm-dd"
+            name="dp"
+            [(ngModel)]="model"
+            ngbDatepicker
+            #d="ngbDatepicker"
+          />
+
+          <span><i class = "fa fa-calendar input-group-text" (click)="d.toggle()" ></i></span>
+          <div class="input-group-append">
+            <button
+              class="btn btn-outline-secondary fa fa-calendar"
+              (click)="d.toggle()"
+              type="button"
+            ></button>
+          </div>
+        </div> -->
+      <label for="EntryDate" class="form-label">Choose a date</label>
+      <div class="form-input entrydate">
+        <input
+          type="text"
+          [matDatepicker]="picker"
+          id="EntryDate"
+          class="form-control"
+          placeholder="MM/DD/YYYY"
+          formControlName="EntryDate"
+        />
+
+        <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+        <div class="matdate">
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <label for="UserId" class="form-label">UserId</label>
+      <input
+        type="number"
+        class="form-control"
+        id="UserId"
+        name="UserId"
+        placeholder="UserId"
+        formControlName="UserId"
+      />
+    </div>
+  </div>
+
+  <!-- Document Upload -->
+  <div class="row">
+    <div class="col">
+      <label for="DocumentPath" class="form-label">DocumentPath</label>
+      <input
+        type="file"
+        class="form-control"
+        id="DocumentPath"
+        name="DocumentPath"
+        placeholder="DocumentPath"
+        formControlName="DocumentPath"
+        #filePicker
+        (change) = "onFilePicked($event)"
+      />
+    </div>
+  </div>
+
+  <!-- isActive -->
+  <div class="row">
+    <div class="col">
+      <div class="form-check mt-3">
+        <label class="form-check-label" for="IsActive"> IsActive </label>
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="IsActive"
+          formControlName="IsActive"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- remarks -->
+  <div class="row">
+    <div class="col">
+      <label for="Remarks" class="form-label">Remarks</label>
+      <input
+        type="text"
+        id="Remarks"
+        name="Remarks"
+        placeholder="Remarks"
+        class="form-control"
+        formControlName="Remarks"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6 offset-3">
+      <div class="d-grid">
+        <button class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</form>

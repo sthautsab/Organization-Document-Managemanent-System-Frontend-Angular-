@@ -1,0 +1,19 @@
+.formArea{
+    max-width:70%;
+    margin:auto;
+}
+.entrydate{
+    display:flex;
+}
+.row{
+    margin-bottom:1rem;
+}
+.star{
+    color:red;
+}
+
+@media only screen and (max-width:600px){
+    .formArea{
+        max-width: 99%;
+    }
+}

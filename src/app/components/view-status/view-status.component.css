@@ -1,0 +1,33 @@
+table {
+    width: 100%;
+  }
+ 
+
+  .mdc-data-table__row:not(.mdc-data-table__row--selected):hover{
+    background-color: unset ! important;
+  }
+
+  .table-responsive {
+    /* display: block; */
+    width: 100%;
+    overflow-x: auto;
+  }
+
+.th{
+    background-color:#00AFA3;
+  }
+  
+.row-pending{
+  background-color: rgb(233, 233, 36);
+}
+.row-pending:hover{
+  background-color:initial ! important;
+}
+
+.row-approved{
+  background-color: rgb(94, 202, 94);
+}
+
+.row-rejected{
+  background-color: rgb(219, 64, 64);
+}
